@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayton's Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <!-- Load in order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/code-display.js"></script>
+    <script src="js/hero-animation.js"></script>
+    <script src="js/interactive-enhancements.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="terminal-loader">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="loading-text">Initializing Portfolio...</div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="loading-status">Status: Loading Assets...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-initials">D</span>
+                <span class="logo-separator">|</span>
+                <span class="logo-initials">N</span>
+            </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="resume.html">Journey</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section id="hero">
+    <div class="hero-container">
+        <div class="hero-left">
+            <div class="intro-text">
+                <p class="welcome">Welcome to my mini space</p>
+                <h1>I'm <span class="name-highlight">Dayton Ng</span></h1>
+                <div class="role-container">
+                    <span class="role current">Game Developer</span>
+                    <span class="role">Software Engineer</span>
+                    <span class="role">Outdoor Enthusiast</span>
+                </div>
+            </div>
+            <div class="hero-tags">
+                <span class="tag" data-animation="float"><i class="fas fa-gamepad"></i> Game Lover</span>
+                <span class="tag" data-animation="pulse"><i class="fas fa-code"></i> Developer</span>
+                <span class="tag" data-animation="bounce"><i class="fas fa-bullseye"></i> Archer</span>
+                <span class="tag" data-animation="sway"><i class="fas fa-person-swimming"></i> Diver</span>
+            </div>
+            <div class="cta-container">
+                <a href="#about" class="cta-button primary">
+                    <span class="button-text">About me</span>
+                    <span class="button-icon"></span>
+                </a>
+                <a href="resume.html" class="cta-button secondary">
+                    <span class="button-text">View Journey</span>
+                    <span class="button-icon"><i class="fas fa-briefcase"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="availability-card">
+                <div class="availability-header">
+                    <h3>Available For</h3>
+                    <span class="availability-status" data-status="open">Open</span>
+                </div>
+                <div class="availability-body">
+                    <div class="availability-line"><i class="fas fa-briefcase"></i><span>Internships</span></div>
+                    <div class="availability-line"><i class="fas fa-location-dot"></i><span>Singapore • GMT+8</span></div>
+                    <div class="availability-line"><i class="fas fa-code"></i><span>Game design, Unity, UE & designing tools, C++/C#</span></div>
+                </div>
+                <div class="availability-note">Open for interview</div>
+                <div class="availability-actions">
+                    <a href="resume.html" class="cta-button primary"><span class="button-text">Resume</span><span class="button-icon"><i class="fas fa-file"></i></span></a>
+                    <a href="https://linkedin.com/in/dayton-ng" target="_blank" class="cta-button secondary"><span class="button-text">LinkedIn</span><span class="button-icon"><i class="fab fa-linkedin"></i></span></a>
+                    <a href="#contact" class="cta-button secondary"><span class="button-text">Contact</span><span class="button-icon"><i class="fas fa-envelope"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/profile.jpg" alt="Dayton Ng">
+            </div>
+            <div class="about-content">
+                <h2>Developer, Designer,<br>Gamer, Adventurer</h2>
+                <p>Hello! I'm Dayton. Most days, you’ll find me deep in VS or refining gameplay mechanics, all driven by a goal to create experiences that people truly love to play.</p>
+                <p>My journey started back when I was a kid, constantly trying to keep up with my sister in whatever game we were playing. Those hours on the infront of the monitor didn’t just make me a gamer but they also sparked a curiosity about how those worlds were built and I haven’t stopped thinking since.</p>
+                <p>
+                    When I’m not behind a monitor, I’m usually chasing a different kind of precision or immersion. Whether I’m focusing on a target at the archery range or exploring a reef while scuba diving, I love the chill and relaxation that comes with outdoor adventures. I try to bring that same sense of focus and discovery back to my work in game design.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects-featured">
+        <div class="projects-container">
+            <h2>Latest Projects</h2>
+            <div class="featured-project">
+                <div class="project-image">
+                    <img src="images/featured-project.jpg" alt="Featured Project">
+                </div>
+                <div class="project-info">
+                    <span class="project-label">Featured Project</span>
+                    <h3>Climb</h3>
+                    <div class="project-description">
+                        <p>"Climb" is an 2D vertical platformer that challenges players to ascend through
+                            treacherous rock formations with timing and strategic movement. Using simple
+                            three-button control system, players must carefully navigate between platforms while
+                            avoiding obstacles and little rest time. The game features a unique mechanic where
+                            players
+                            can
+                            traverse both left and right, adding a tactical layer to the climbing experience.
+                            Usage of the punch mechanism to clear obstacles and collection of
+                            power-ups are helpful for achieving higher scores and mastering the climb.</p>
+                    </div>
+                    <div class="project-tech">
+                        <span>C++</span>
+                        <span>Procreate</span>
+                        <span>Git Repo</span>
+                        <span>AEngine</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="project-climb.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro">Reach out to me!</p>
+
+            <form action="https://formsubmit.co/daytonng02@gmail.com" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <a href="https://github.com/dayton02" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/dayton-ng" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/daton_n/profilecard/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
