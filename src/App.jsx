@@ -1,21 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import Home from './pages/Home';
-import './App.css'; // if missing
-
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div className="app-container">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <Footer />
+    <div className="overflow-x-hidden text-stone-300 antialiased">
+      <div className="fixed inset-0 -z-10">
+        <div className="relative h-full w-full bg-white">
+          <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+          </div>
+        </div>
       </div>
-    </Router>
-  );
+    </div>
+  )
 }
 
 export default App;
