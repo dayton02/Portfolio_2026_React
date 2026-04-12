@@ -1,79 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+@theme {
+  --font-pixel: 'Pixelify Sans', sans-serif;
+  --color-maple-bg: #87CEEB;
+  --color-maple-ui: #e0d8c8;
+  --color-maple-border: #6b5c43;
 }
 
 body {
   margin: 0;
+  font-family: var(--font-pixel);
+  background-color: var(--color-maple-bg);
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
 }
 
-#root {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-@keyframes fadeInUp {
+::-webkit-scrollbar-track {
+  background: #d1c8b4;
+  border-left: 2px solid #8e7c61;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8e7c61;
+  border: 2px solid #e0d8c8;
+}
+
+/* --- PIXEL ART ANIMATIONS --- */
+
+/* 1. Slow scrolling clouds */
+@keyframes scrollClouds {
   from {
-    opacity: 0;
-    transform: translateY(30px);
+    background-position: 0 0;
   }
+
   to {
-    opacity: 1;
+    background-position: -1000px 0;
+  }
+}
+
+.animate-clouds {
+  animation: scrollClouds 60s linear infinite;
+}
+
+/* 2. Classic 2D Sprite Idle "Breathing" */
+@keyframes spriteIdle {
+
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.95) translateY(2px);
+  }
+}
+
+.animate-sprite-idle {
+  animation: spriteIdle 1.5s steps(2, end) infinite;
+  transform-origin: bottom center;
+}
+
+/* 3. Floating effect for items/NPCs */
+@keyframes float {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
-.animate-fade-in-up {
-  opacity: 0;
-  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.animate-float {
+  animation: float 2s steps(4, end) infinite;
+}
+
+/* --- PORTAL & TOOLTIP ANIMATIONS --- */
+
+@keyframes portalPulse {
+
+  0%,
+  100% {
+    transform: scale(1) scaleY(0.9);
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+  }
+
+  50% {
+    transform: scale(1.05) scaleY(1);
+    filter: drop-shadow(0 0 16px rgba(56, 189, 248, 1));
+  }
+}
+
+.animate-portal {
+  animation: portalPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes tooltipBounce {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  50% {
+    transform: translateY(-4px) translateX(-50%);
+  }
+}
+
+.animate-tooltip {
+  animation: tooltipBounce 2s ease-in-out infinite;
 }

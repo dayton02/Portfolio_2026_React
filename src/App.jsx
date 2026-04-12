@@ -1,24 +1,31 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import FeaturedProjects from "./components/FeaturedProjects";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import React, { useState } from 'react';
+import Hero from './components/Hero';
+import LoginScreen from './components/LoginScreen';
+import AudioControls from './components/AudioControls';
+import { AudioProvider } from './contexts/AudioContext';
 
-const App = () => {
+function AppContent() {
+  const [playerName, setPlayerName] = useState(null);
+
   return (
-    <div className="overflow-x-hidden text-stone-900 bg-[#f4f4f4] min-h-screen antialiased selection:bg-black selection:text-white font-sans">
+    <div className="w-full h-[100svh] relative overflow-hidden">
+      {!playerName && <LoginScreen onLogin={(name) => setPlayerName(name)} />}
       
-      <div className="container mx-auto px-6 md:px-12 relative min-h-[100svh]">
-        <Navbar />
-        <main>
-          <Hero />
-          <FeaturedProjects />
-          <About />
-          <Contact />
-        </main>
-      </div>
+      {playerName && (
+        <>
+          <Hero playerName={playerName} />
+        </>
+      )}
     </div>
-  )
+  );
+}
+
+function App() {
+  return (
+    <AudioProvider>
+      <AppContent />
+    </AudioProvider>
+  );
 }
 
 export default App;
